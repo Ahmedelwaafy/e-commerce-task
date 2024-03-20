@@ -24,23 +24,23 @@ function ProductCard({ card }: { card: ICartItem }) {
       >
         {card?.title}
       </h3>
-      <div className="flex items-center justify-between w-full gap-4">
+      <div className="flex items-center justify-between w-full gap-4 rtl:flex-row-reverse">
         <div>
-          <h5 className="font-semibold text-xl text-secondary-color mt-2">
+          <h5 className="font-semibold text-xl text-secondary-color mt-2 rtl:flex rtl:items-center rtl:flex-row-reverse">
             {card?.price} <sub className="font-medium">LE</sub>
           </h5>
-          <div className="flex gap-3 mt-2 items-center">
-            <span className="line-through text-[#A7A9AC] font-semibold text-sm">
+          <div className="flex gap-3 mt-2 items-center rtl:flex-row-reverse">
+            <span className="line-through text-[#A7A9AC] font-semibold text-sm !rtl:rtl">
               {card?.fake_price} LE
             </span>{" "}
-            <span className="w-12 h-4 flex-center rounded-[3px] bg-primary-color font-semibold text-[10px]">
+            <span className="w-12 h-4 flex-center rounded-[3px] bg-primary-color font-semibold text-[10px] ">
               {card?.discount}
             </span>
           </div>
         </div>
         <img className="w-14" src={card?.logo} alt="logo" />
       </div>
-      <div className="flex justify-center gap-3 mt-3 items-center">
+      <div className="flex justify-center gap-3 mt-3 items-center rtl:flex-row-reverse">
         <RatingComponent small className="w-fit" defaultRating={card?.rate} />
         <h3 className="text-sm font-semibold">{card?.reviews} of 5</h3>
       </div>

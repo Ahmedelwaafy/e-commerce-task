@@ -22,7 +22,7 @@ function TopBanner({ t }: { t: TFunction }) {
               alt="burger-icon"
             />
           </SheetTrigger>
-          <SheetContent side="left">
+          <SheetContent className="z-[2000] w-[350px]" side="left">
             <SheetHeader>
               <SheetTitle className="cursor-pointer">
                 {" "}
