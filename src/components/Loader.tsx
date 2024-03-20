@@ -1,9 +1,15 @@
-import React from 'react'
 
 function Loader() {
   return (
-    <div>Loader</div>
-  )
+    <section className="w-full h-screen flex-center">
+
+    <div className="leap-frog">
+      <div className="leap-frog__dot"></div>
+      <div className="leap-frog__dot"></div>
+      <div className="leap-frog__dot"></div>
+    </div>
+    </section>
+  );
 }
 
-export default Loader
+export default Loader;
