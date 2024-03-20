@@ -10,6 +10,7 @@ import {
   SheetTrigger,
 } from "@/components/ui/sheet";
 import { lazy, Suspense } from "react";
+import { useTranslation } from "react-i18next";
 const LazyCart = lazy(() => import("../Cart/Cart.tsx"));
 
 function Navbar({
@@ -19,6 +20,8 @@ function Navbar({
   cart: [];
   RemoveItemFromCart: (id: number) => void;
 }) {
+  const { t, i18n } = useTranslation("home");
+
   let { totalAmount, totalQTY } = cart.reduce(
     (cartTotal, cartItem) => {
       const { price, cartQTY } = cartItem;
@@ -34,8 +37,16 @@ function Navbar({
       totalQTY: 0,
     }
   );
+  const lng = i18n.language;
+  function changeLanguage(lang: string) {
+    if (lng !== lang) {
+      i18n.changeLanguage(lang);
+      window.location.replace(window.location.href.replace(lng, lang));
+    }
+  }
   return (
     <nav>
+      {i18n.language}
       <div className={`site_container ${styles.Navbar} `}>
         <div className="relative">
           <input
@@ -118,6 +129,25 @@ function Navbar({
             <img className="w- " src="/images/user.svg" alt="user-icon" />
             Login
           </Link>
+          <div className="flex gap-1">
+            <button
+              className={`trns hover:opacity-100  ${
+                lng === "en" ? "font-bold " : "opacity-70"
+              }`}
+              onClick={() => changeLanguage("en")}
+            >
+              EN
+            </button>
+            /
+            <button
+              className={`trns hover:opacity-100  ${
+                lng === "ar" ? "font-bold " : "opacity-70"
+              }`}
+              onClick={() => changeLanguage("ar")}
+            >
+              AR
+            </button>
+          </div>
         </div>
       </div>
       <div className={styles.bottom__nav__menu}>

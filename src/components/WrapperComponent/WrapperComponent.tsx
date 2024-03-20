@@ -21,7 +21,7 @@ class WrapperComponent extends Component<ProductProps, ProductState> {
     };
   }
 
-  addToCart = (product: ICartItem, increment: number = 1) => {
+  addToCart  = (product: ICartItem, increment: number = 1) => {
     const itemIndex = this.state.cart.findIndex(
       (item) => item.id === product.id
     );

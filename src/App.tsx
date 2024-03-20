@@ -1,14 +1,12 @@
-import reactLogo from "./assets/react.svg";
-import viteLogo from "/vite.svg";
-import "./SASS/styles.scss";
 import { useEffect } from "react";
 import { useTranslation } from "react-i18next";
 import {
   createBrowserRouter,
-  RouterProvider,
   Navigate,
+  RouterProvider,
 } from "react-router-dom";
 import { Loader } from "./components";
+import "./SASS/styles.scss";
 function App() {
   const { i18n } = useTranslation("");
 
