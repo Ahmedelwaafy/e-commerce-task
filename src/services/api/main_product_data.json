@@ -1,0 +1,37 @@
+{
+  "id": 1,
+  "title": "Adidas black t-shirt lorem ipsum dolor sit amet, consectetuer adipiscing elit.",
+  "logo": "/images/adidas.svg",
+  "category": "Men",
+  "rate": 4,
+  "rate_count": 22,
+  "reviews": 4.9,
+  "sizes": ["small", "medium", "large", "x large", "xx large"],
+  "price": 9.999,
+  "fake_price": 9.999,
+  "discount": "30%",
+  "quantity": 5,
+  "cartQTY": 0,
+  "images": [
+    {
+      "id": 1,
+      "src": "/images/main_product_img_1.png"
+    },
+    {
+      "id": 2,
+      "src": "/images/main_product_img_2.png"
+    },
+    {
+      "id": 3,
+      "src": "/images/main_product_img_3.png"
+    },
+    {
+      "id": 4,
+      "src": "/images/main_product_img_4.png"
+    },
+    {
+      "id": 4,
+      "src": "/images/main_product_img_5.png"
+    }
+  ]
+}

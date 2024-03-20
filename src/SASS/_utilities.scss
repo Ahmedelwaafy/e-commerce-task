@@ -1,0 +1,25 @@
+.rtl {
+  direction: rtl;
+}
+.ltr {
+  direction: ltr;
+}
+.trns {
+  @apply transition-all duration-300 ease-in-out;
+}
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.flex-col-center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.site_container {
+  width: min(90%, 1220px);
+  margin-inline: auto;
+}

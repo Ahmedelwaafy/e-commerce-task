@@ -1,0 +1,27 @@
+.CartItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  width: 411px;
+  height: 120px;
+  border: 0.75px solid #ececec;
+  border-radius: 7px;
+  padding: 7px;  position: relative;
+
+}
+
+.CartItem_img {
+  height: 100%;
+  width: 104px;
+  border-radius: 7px;
+  flex-shrink: 0;
+}
+.CartItem_details {
+  font-weight: 600;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  flex-grow: 1;
+}

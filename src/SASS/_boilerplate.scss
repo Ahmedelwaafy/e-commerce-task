@@ -1,0 +1,27 @@
+:root {
+  --primary-color: #fff200;
+  --secondary-color: #542e90;
+}
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html:lang(en) body {
+  font-family: "Montserrat", sans-serif;
+}
+html:lang(ar) body {
+  font-family: "Cairo", sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  overflow-x: hidden;
+  background-color: #ffffff;
+  color: #1d1d1b;
+}

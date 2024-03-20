@@ -1,0 +1,13 @@
+//!-- swiper active slide
+.ItemSlider__bottom-slider .swiper-slide-thumb-active .slide__img--wrapper {
+  border: 2px solid var(--secondary-color);
+  transform: scale(0.95);
+  opacity: 1;
+}
+
+.similar_slider {
+  --swiper-scrollbar-bottom: 0px;
+  --swiper-scrollbar-bg-color: rgb(233, 229, 229);
+  --swiper-scrollbar-drag-bg-color: var(--secondary-color);
+  --swiper-scrollbar-size: 4px;
+}
