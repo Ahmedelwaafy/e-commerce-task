@@ -74,7 +74,7 @@ function Navbar({
                 {t("Navbar.Cart")}
               </div>
             </SheetTrigger>
-            <SheetContent side="right" className=" w-[475px] !max-w-full ">
+            <SheetContent side="right" className=" w-[475px] !max-w-full z-[20000]">
               <SheetHeader className="font-semibold text-[28px] text-secondary-color flex-center w-full mt-4">
                 {t("Navbar.My_Cart")}
               </SheetHeader>
