@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.scss";
+import { TFunction } from "i18next";
 
 function Footer({ t }: { t: TFunction }) {
   const currentYear = new Date().getFullYear();
