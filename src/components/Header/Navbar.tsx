@@ -46,17 +46,16 @@ function Navbar({
   }
   return (
     <nav>
-      {i18n.language}
       <div className={`site_container ${styles.Navbar} `}>
         <div className="relative">
           <input
             type="text"
-            placeholder="Search"
-            className={` px-12  trns  outline-none peer ${styles.Navbar__search}`}
+            placeholder={t("Navbar.input_placeholder")}
+            className={` px-12  trns  outline-none peer lg:w-60 ss:w-40 ${styles.Navbar__search}`}
           />
 
           <img
-            className="absolute left-4 top-1/2 -translate-y-1/2 trns peer-focus:-translate-x-3 peer-focus:opacity-0"
+            className="absolute left-4 rtl:left-auto rtl:right-4 top-1/2 -translate-y-1/2 trns peer-focus:-translate-x-3 rtl:peer-focus:translate-x-3 peer-focus:opacity-0"
             src="/images/search.svg"
             alt="search-icon"
           />
@@ -72,19 +71,18 @@ function Navbar({
                     {totalQTY}
                   </span>
                 </div>
-                Cart
+                {t("Navbar.Cart")}
               </div>
             </SheetTrigger>
             <SheetContent side="right" className=" w-[475px] !max-w-full ">
               <SheetHeader className="font-semibold text-[28px] text-secondary-color flex-center w-full mt-4">
-                My Cart
+                {t("Navbar.My_Cart")}
               </SheetHeader>
 
               {cart?.length === 0 ? (
                 <div className="flex-col gap-3">
                   <p className="text-sm text-balance text-center opacity-70 mt-3">
-                    Your cart is empty, hurry up and add products to your cart
-                    now!
+                    {t("Navbar.empty_Cart")}
                   </p>
                   <div className=" ">
                     <Player
@@ -95,7 +93,7 @@ function Navbar({
                     />
                   </div>
                   <button className="flex-center w-full">
-                    <SheetClose className="">Back To Store</SheetClose>
+                    <SheetClose className=""> {t("Navbar.Back")}</SheetClose>
                   </button>
                 </div>
               ) : (
@@ -113,23 +111,23 @@ function Navbar({
           </Sheet>{" "}
           <Link
             to=""
-            className="gap-2.5 flex-center text- font-bold hover:animate-bounce"
+            className="gap-2.5 flex-center text- font-bold hover:animate-bounce xl:hidden"
           >
             <img
               className="w- "
               src="/images/wishlist.svg"
               alt="wishlist-icon"
             />
-            Wishlist
+            {t("Navbar.Wishlist")}
           </Link>
           <Link
             to=""
-            className="gap-2.5 flex-center text- font-bold hover:animate-bounce"
+            className="gap-2.5 flex-center text- font-bold hover:animate-bounce lg:hidden"
           >
             <img className="w- " src="/images/user.svg" alt="user-icon" />
-            Login
+            {t("Navbar.Login")}
           </Link>
-          <div className="flex gap-1">
+          <div className="flex gap-1 lg:hidden">
             <button
               className={`trns hover:opacity-100  ${
                 lng === "en" ? "font-bold " : "opacity-70"
@@ -153,26 +151,26 @@ function Navbar({
       <div className={styles.bottom__nav__menu}>
         <ul className="site_container">
           <li>
-            <NavLink to="">Men</NavLink>
+            <NavLink to="">{t("menu.Men")}</NavLink>
           </li>
           <li>
-            <NavLink to="">Women</NavLink>
+            <NavLink to="">{t("menu.Women")}</NavLink>
           </li>
           <li>
-            <NavLink to="">Unisex</NavLink>
+            <NavLink to="">{t("menu.Unisex")}</NavLink>
           </li>
           <li>
-            <NavLink to="">Kids</NavLink>
+            <NavLink to="">{t("menu.Kids")}</NavLink>
           </li>
-          <li>
-            <NavLink to="">Best Sellers</NavLink>
+          <li className="lg:hidden">
+            <NavLink to="">{t("menu.Best")}</NavLink>
           </li>
-          <li>
-            <NavLink to="">New Arrivals</NavLink>
+          <li className="lg:hidden">
+            <NavLink to="">{t("menu.New")}</NavLink>
           </li>
 
           <li className="!text-[#F11133]">
-            <NavLink to="">Offers</NavLink>
+            <NavLink to="">{t("menu.Offers")}</NavLink>
           </li>
         </ul>
       </div>

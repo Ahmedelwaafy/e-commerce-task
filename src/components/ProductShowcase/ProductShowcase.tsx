@@ -7,6 +7,7 @@ import styles from "./ProductShowcase.module.scss";
 interface ProductShowcaseProps {
   data: ICartItem;
   addToCart: (x: ICartItem, increment: number) => void;
+  t: TFunction;
 }
 
 interface ProductShowcaseState {
@@ -30,15 +31,19 @@ class ProductShowcase extends Component<
     this.setState({ increment: this.state.increment - 1 });
   };
   render() {
-    const { data, addToCart } = this.props;
+    const { data, addToCart, t } = this.props;
 
     return (
       <section className={`mt-10 site_container ${styles.ProductShowcase}`}>
-        <div className="ProductShowcase__left w-[48%] ">
+        <div className="ProductShowcase__left w-[48%] lg:w-full ">
           <ItemSlider data={data?.images} />
         </div>
         <div className={styles.ProductShowcase__right}>
-          <img className="w-[60px]" src={data?.logo} alt={data?.title} />
+          <img
+            className="w-[60px] "
+            src={data?.logo}
+            alt={data?.title}
+          />
           <h1>{data?.title}</h1>
           <h2>{data?.category}</h2>
           <div className="flex items-center gap-4 mt-4">
@@ -58,7 +63,7 @@ class ProductShowcase extends Component<
             </span>
           </div>
           <div className="divider h-px bg-[#ECECEC] w-full my-5 rounded-full"></div>
-          <h6>Size</h6>
+          <h6>{t("ProductShowcase.Size")}</h6>
           <div className="sizes flex gap-4 mt-4">
             {data?.sizes?.map((size, i) => (
               <div
@@ -72,7 +77,7 @@ class ProductShowcase extends Component<
             ))}
           </div>
           <div className="divider h-px bg-[#ECECEC] w-full my-5 rounded-full"></div>
-          <h6>Color</h6>
+          <h6>{t("ProductShowcase.Color")}</h6>
           <div className="colors flex gap-4 mt-4">
             <img
               className="w-[80px] aspect-square rounded-full border-2 border-secondary-color cursor-pointer trns hover:scale-105"
@@ -86,7 +91,7 @@ class ProductShowcase extends Component<
             />
           </div>
           <div className="divider h-px bg-[#ECECEC] w-full my-5 rounded-full"></div>
-          <h6>Quantity</h6>
+          <h6>{t("ProductShowcase.Quantity")}</h6>
           <div className="flex items-center justify-between gap-4 mt-4 w-[250px] h-12  bg-[#F5F5F5] border border-[#D9D9D9] rounded-[24px] p-1">
             <button
               disabled={this.state.increment === 1}
@@ -106,12 +111,12 @@ class ProductShowcase extends Component<
           <div className="options flex w-full justify-start gap-8 mt-7">
             <button
               onClick={() => addToCart(data, this.state.increment)}
-              className="font-semibold text-sm text-center w-[250px] h-14 bg-secondary-color rounded-[27px]  text-white  "
+              className="font-semibold text-sm text-center w-1/2 max-w-[250px] h-14 bg-secondary-color rounded-[27px]  text-white  "
             >
-              Add To Cart{" "}
+              {t("ProductShowcase.Add")}{" "}
             </button>
-            <button className="font-semibold text-sm text-center w-[250px] h-14 bg-primary-color rounded-[27px] ">
-              Pickup From Store
+            <button className="font-semibold text-sm text-center w-1/2 max-w-[250px] h-14 bg-primary-color rounded-[27px] ">
+              {t("ProductShowcase.Pickup")}
             </button>
           </div>
         </div>

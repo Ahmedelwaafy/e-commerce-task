@@ -1,9 +1,17 @@
+@use "../../SASS/_breakpoints.scss" as media;
+
 .ProductShowcase {
   display: flex;
   gap: 4rem;
+  @include media.max(lg) {
+    flex-direction: column;
+  }
 }
 .ProductShowcase__right {
   width: 52%;
+  @include media.max(lg) {
+  width: 100%;
+  }
   h1 {
     font-size: 18px;
     font-weight: 700;

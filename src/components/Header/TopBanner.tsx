@@ -1,17 +1,18 @@
-import { Link } from "react-router-dom";
-import styles from "./Header.module.scss";
 import {
   Sheet,
+  SheetClose,
   SheetContent,
   SheetDescription,
   SheetHeader,
   SheetTitle,
   SheetTrigger,
-  SheetClose,
 } from "@/components/ui/sheet";
-function TopBanner() {
+import { TFunction } from "i18next";
+import { Link } from "react-router-dom";
+import styles from "./Header.module.scss";
+function TopBanner({ t }: { t: TFunction }) {
   return (
-    <div className={styles.top__banner}>
+    <div className={`fade-in ${styles.top__banner}`}>
       <div className={`site_container ${styles.top__banner__menu} `}>
         <Sheet>
           <SheetTrigger>
@@ -30,19 +31,19 @@ function TopBanner() {
               <SheetDescription>
                 <ul className={styles.side__menu}>
                   <SheetClose>
-                    <li>Men </li>
+                    <li>{t("menu.Men")} </li>
                   </SheetClose>
                   <SheetClose>
-                    <li>Women </li>
+                    <li>{t("menu.Women")} </li>
                   </SheetClose>
                   <SheetClose>
-                    <li>Kids </li>
+                    <li>{t("menu.Kids")} </li>
                   </SheetClose>
                   <SheetClose>
-                    <li>Sports & fitness </li>
+                    <li>{t("menu.Sports")} </li>
                   </SheetClose>
                   <SheetClose>
-                    <li>Electronics </li>
+                    <li>{t("menu.Electronics")} </li>
                   </SheetClose>
                 </ul>
               </SheetDescription>
@@ -50,34 +51,38 @@ function TopBanner() {
           </SheetContent>
         </Sheet>{" "}
         <img className={styles.logo} src="/images/logo.svg" alt="logo" />
-        <div className="flex gap-3 ml-24">
-          <img src="/images/small__arrow.svg" alt="small__arrow__icon" />
-          <div className="text-sm ">
-            Valentine’s Day Offers! Buy Two Get One Free{" "}
+        <div className="flex gap-3 ml-24 xxl:hidden">
+          <img
+            className="rtl:rotate-180"
+            src="/images/small__arrow.svg"
+            alt="small__arrow__icon"
+          />
+          <div className="text-sm  ">
+            {t("banner.txt")}{" "}
             <Link
               to=""
               className="underline font-semibold underline-offset-2 hover:underline-offset-4 trns animate-pulse"
             >
-              Shop Now
+              {t("banner.cta")}
             </Link>
           </div>
           <img
-            className="rotate-180"
+            className="rotate-180 rtl:rotate-0"
             src="/images/small__arrow.svg"
             alt="small__arrow__icon"
           />
         </div>
-        <Link to="" className="gap-2.5 flex-center text-sm font-bold">
+        <Link to="" className="gap-2.5 flex-center text-sm font-bold lg:hidden">
           <img className="w-5 " src="/images/mobile.svg" alt="mobile-icon" />
-          Contact Us
+          {t("banner.Contact")}
         </Link>
-        <Link to="" className="gap-2.5 flex-center text-sm font-bold">
+        <Link to="" className="gap-2.5 flex-center text-sm font-bold ss:hidden">
           <img className="w-5 " src="/images/order.svg" alt="order-icon" />
-          Track Order{" "}
+          {t("banner.Track")}
         </Link>
         <Link to="" className="gap-2.5 flex-center text-sm font-bold">
           <img className="w- " src="/images/location.svg" alt="location-icon" />
-          Find A Store{" "}
+          {t("banner.Find")}
         </Link>
       </div>
     </div>

@@ -4,8 +4,9 @@ import Header from "../Header/Header";
 import ProductShowcase from "../ProductShowcase/ProductShowcase";
 import { ICartItem } from "@/types";
 import toast from "react-hot-toast";
+import { TFunction } from "i18next";
 
-interface ProductProps {}
+interface ProductProps {t:TFunction}
 
 interface ProductState {
   cart: ICartItem[];
@@ -45,10 +46,15 @@ class WrapperComponent extends Component<ProductProps, ProductState> {
   };
   render() {
     const { cart } = this.state;
+    const { t } = this.props;
     return (
       <>
-        <Header RemoveItemFromCart={this.RemoveItemFromCart} cart={cart} />
-        <ProductShowcase data={data} addToCart={this.addToCart} />
+        <Header
+          t={t}
+          RemoveItemFromCart={this.RemoveItemFromCart}
+          cart={cart}
+        />
+        <ProductShowcase data={data} addToCart={this.addToCart} t={t} />
       </>
     );
   }

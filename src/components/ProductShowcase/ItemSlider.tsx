@@ -95,7 +95,7 @@ function ItemSlider({ data, className }: IItemSliderProps) {
                 />
                 <button className="absolute top-6 left-6 p-2 bg-white rounded-[7px]">
                   <img
-                    className="trns group-hover:rotate-[360deg]"
+                    className="trns group-hover:rotate-[360deg] "
                     src="/images/vr.svg"
                     alt="vr"
                   />
@@ -112,9 +112,13 @@ function ItemSlider({ data, className }: IItemSliderProps) {
             onClick={() => {
               swiperElRefThumbs?.current?.swiper?.slideNext();
             }}
-            className="swiper-button-next  rotate-180"
+            className="swiper-button-next  rotate-180 "
           >
-            <img src="/images/big_arrow.svg" alt="big_arrow-icon" />
+            <img
+              className="rtl:rotate-180"
+              src="/images/big_arrow.svg"
+              alt="big_arrow-icon"
+            />
           </button>
         )}
         <div className="w-11/12 ">
@@ -143,7 +147,7 @@ function ItemSlider({ data, className }: IItemSliderProps) {
             onClick={() => {
               swiperElRefThumbs?.current?.swiper?.slidePrev();
             }}
-            className="  "
+            className=" rtl:rotate-180 "
           >
             <img
               className=" "
