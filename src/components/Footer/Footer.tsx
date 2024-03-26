@@ -39,7 +39,7 @@ function Footer({ t }: { t: TFunction }) {
             >
               {t("footer.Subscribe_btn")}{" "}
               <img
-                className="group-hover:translate-x-1.5 group-hover:-translate-y-1.5 trns"
+                className="group-hover:translate-x-1.5 group-hover:-translate-y-1.5 trns rtl:group-hover:-translate-x-1.5 rtl:group-hover:-translate-y-1.5 rtl:-rotate-90"
                 src="/images/envelope.svg"
                 alt="envelope-icon"
               />
