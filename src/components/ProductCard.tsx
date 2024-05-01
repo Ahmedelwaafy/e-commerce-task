@@ -3,7 +3,7 @@ import RatingComponent from "./RatingComponent";
 
 function ProductCard({ card }: { card: ICartItem }) {
   return (
-    <div className="w-[270px] h-[440px] border border-[#ECECEC] rounded-[5px] hover:border-secondary-color trns p-2 group cursor-pointer mb-8">
+    <div className="w-[268px] h-[440px] border border-[#ECECEC] rounded-[5px] hover:border-secondary-color trns p-2 group cursor-pointer mb-8 mx-0">
       <div className="w-full h-[250px] relative rounded-sm overflow-hidden ">
         <img
           className="w-full h-full group-hover:scale-110 transition-transform duration-700 ease-in-out"

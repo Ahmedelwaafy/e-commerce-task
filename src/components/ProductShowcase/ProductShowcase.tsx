@@ -3,6 +3,7 @@ import { Component } from "react";
 import RatingComponent from "../RatingComponent";
 import ItemSlider from "./ItemSlider";
 import styles from "./ProductShowcase.module.scss";
+import { TFunction } from "i18next";
 
 interface ProductShowcaseProps {
   data: ICartItem;
@@ -35,7 +36,7 @@ class ProductShowcase extends Component<
 
     return (
       <section className={`mt-10 site_container ${styles.ProductShowcase}`}>
-        <div className="ProductShowcase__left w-[48%] lg:w-full ">
+        <div className="ProductShowcase__left w-[40%] lg:w-full ">
           <ItemSlider data={data?.images} />
         </div>
         <div className={styles.ProductShowcase__right}>
@@ -53,7 +54,7 @@ class ProductShowcase extends Component<
           </div>
           <div className="flex items-center gap-6 mt-2">
             <h5>
-              {data?.price} <sub className="font-medium">LE</sub>
+              {data?.price} <sub className="font-medium text-[20px]">LE</sub>
             </h5>
             <span className="line-through text-[#A7A9AC] font-semibold">
               {data?.fake_price} LE
@@ -96,7 +97,7 @@ class ProductShowcase extends Component<
             <button
               disabled={this.state.increment === 1}
               onClick={() => this.decrease()}
-              className="bg-primary-color rounded-full aspect-square w-9 flex-center disabled:cursor-not-allowed disabled:opacity-50"
+              className="bg-primary-color rounded-full aspect-square w-9 flex-center disabled:cursor-not-allowed disabled:opacity-50 "
             >
               <img src="/images/minus.svg" alt="minus-icon" />
             </button>
@@ -111,11 +112,11 @@ class ProductShowcase extends Component<
           <div className="options flex w-full justify-start gap-8 mt-7">
             <button
               onClick={() => addToCart(data, this.state.increment)}
-              className="font-semibold text-sm text-center w-1/2 max-w-[250px] h-14 bg-secondary-color rounded-[27px]  text-white  "
+              className="font-semibold  text-center w-1/2 max-w-[250px] h-14 bg-secondary-color rounded-[27px]  text-white  "
             >
               {t("ProductShowcase.Add")}{" "}
             </button>
-            <button className="font-semibold text-sm text-center w-1/2 max-w-[250px] h-14 bg-primary-color rounded-[27px] ">
+            <button className="font-semibold  text-center w-1/2 max-w-[250px] h-14 bg-primary-color rounded-[27px] ">
               {t("ProductShowcase.Pickup")}
             </button>
           </div>

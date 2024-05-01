@@ -12,7 +12,7 @@ function Footer({ t }: { t: TFunction }) {
           <Link className="" to="">
             <img src="/images/logo_yellow.svg" alt="logo_yellow" />
           </Link>
-          <h6 className="text-white mt-7 text-sm">
+          <h6 className="text-white mt-7 sm:text-justify">
             {" "}
             {t("footer.lorem_1")}
             <br />
@@ -23,9 +23,9 @@ function Footer({ t }: { t: TFunction }) {
             {t("footer.lorem_3")}
           </h6>
         </div>
-        <div className="bg-white/30  h-96 w-px mx-12 lg:h-px lg:w-full lg:my-12" />
+        <div className="bg-white/30  h-96 w-px mx-12 lg:h-px lg:w-full lg:my-12 lg:mx-auto" />
         <div className="footer__right w-1/2 lg:w-full">
-          <h5 className="text-white">{t("footer.Subscribe")}</h5>
+          <h5 className="text-white text-lg">{t("footer.Subscribe")}</h5>
           <form className="bg-white relative  h-12 w-full rounded-[24px] mt-5">
             <input
               type="text"
@@ -139,7 +139,7 @@ function Footer({ t }: { t: TFunction }) {
             alt="mastercard"
           />
         </div>
-        <div className="flex-center gap-1">
+        <div className="flex-center gap-1  text-sm">
           {t("footer.Powered")}
           <a href="">
             <img

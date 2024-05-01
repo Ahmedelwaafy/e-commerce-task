@@ -10,7 +10,7 @@ const Breadcrumbs = ({
 }) => {
   return (
     <nav aria-label="breadcrumb" className="shadow-sm">
-      <ul className="breadcrumb flex justify-start gap-1 items-center h-14 rtl:ltr  site_container">
+      <ul className="breadcrumb flex justify-start gap-1 items-center h-14 rtl:ltr  site_container sm:text-[10px] ">
         <li className="breadcrumb-item">
           <Link to="">{t("Home")} /</Link>
         </li>

@@ -60,7 +60,7 @@ function Navbar({
             alt="search-icon"
           />
         </div>
-        <img className="" src="/images/adidas.svg" alt="adidas-icon" />
+        <img className="sm:w-16" src="/images/adidas.svg" alt="adidas-icon" />
         <div className="flex gap-8">
           <Sheet>
             <SheetTrigger>
@@ -71,10 +71,16 @@ function Navbar({
                     {totalQTY}
                   </span>
                 </div>
+                <span className="sm:hidden">
                 {t("Navbar.Cart")}
+
+                </span>
               </div>
             </SheetTrigger>
-            <SheetContent side="right" className=" w-[475px] !max-w-full z-[20000]">
+            <SheetContent
+              side="right"
+              className=" w-[475px] !max-w-full z-[20000]"
+            >
               <SheetHeader className="font-semibold text-[28px] text-secondary-color flex-center w-full mt-4">
                 {t("Navbar.My_Cart")}
               </SheetHeader>
@@ -149,7 +155,7 @@ function Navbar({
         </div>
       </div>
       <div className={styles.bottom__nav__menu}>
-        <ul className="site_container">
+        <ul className="site_container text-[17px]">
           <li>
             <NavLink to="">{t("menu.Men")}</NavLink>
           </li>
